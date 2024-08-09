@@ -1,0 +1,466 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif, Courier, monospace;
+}
+
+ body {
+    background: url("../assets/background-image.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.2rem 9%;
+    
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.brand {
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: rgb(19, 19, 19);
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    gap: 3rem;
+    padding: 0.5rem;
+
+}
+
+.navbar a {
+    text-decoration: none;
+    color: rgb(41, 41, 41);
+    text-align: center;
+    margin-left: 3rem;
+    transition: 0.3s;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.navbar a:hover {
+    color: black;
+    
+}
+
+#menu-icon {
+    color: rgb(19, 19, 19);
+    font-size: 1.8rem;
+    display: none;
+
+}
+
+/* ............Time Watch................ */
+.container {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     /* display: none;  */
+    
+}
+
+.time-box {
+
+    min-width: 364px;
+    min-height: 24vh;
+    color: whitesmoke;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0px 0px 10px rgba(24, 23, 23, 0.3), 0px 10px 20px rgba(0, 0, 0, 0.7);
+    padding: 20px;
+
+    background-color: hsla(0, 0%, 13%, 0.7);
+
+}
+
+.time-box h1 {
+    font-size: 3.5rem;
+}
+
+.time-box span {
+    position: relative;
+    align-self: self-start;
+    margin-top: 1.5rem;
+    font-weight: bolder;
+    font-size: 1.5rem;
+}
+
+
+
+.stopwatch-container{
+    
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    display: none;
+}
+
+.stopwatch{
+    min-width: 380px;
+    min-height: 23vh;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 10px rgba(24, 23, 23, 0.3), 0px 10px 20px rgba(0, 0, 0, 0.7);
+    padding: 20px ;
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background-color: hsla(0, 0%, 13%, 0.7);
+}
+
+.timerDisplay{
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.buttons{
+    margin-top: 20px;
+}
+
+.btn{
+    font-size: 20px;
+    background: none;
+    border: none;
+    color: #fff;
+    padding: 12px 24px;
+    margin-inline: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+#stopBtn{
+    background-color: rgb(236, 6, 6, 0.7);
+}
+#startBtn{
+    background-color: rgb(3, 116, 3, 0.7);
+}
+#resetBtn{
+    background-color: rgba(6, 40, 236, 0.7);
+}
+
+
+/* ..................MEDIA QUARIES....................... */
+@media screen and (max-width: 964px) {
+
+    .header {
+        padding: 1.1rem 3%;
+    }
+
+    .navbar {
+        padding: o.2rem 0rem;
+    }
+}
+
+@media screen and (max-width: 780px) {
+
+    .header {
+        padding: 1rem 2rem;
+        
+    }
+    .navbar a {
+        margin-left: 1rem;
+    }
+
+}
+
+@media screen and (max-width: 660px) {
+
+    .header {
+        padding: 1rem 3rem;
+    }
+
+    .brand {
+        font-weight: 700;
+        font-size: 1.6rem;
+    }
+
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background-color: hsla(0, 0%, 13%, 0.6);
+        border-top: .1rem solid rgb(0, 0, 0, .2);
+        box-shadow: 0 .5rem 1rem rgb(0, 0, 0, .2);
+        display: none;
+    }
+    .navbar a{
+        color: rgb(245, 240, 240);
+    }
+    .navbar a:hover{
+       color: white;
+    }
+
+    .navbar.active {
+        display: block;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+
+    }
+
+}
+
+@media screen and (max-width: 560px) {
+
+    .header {
+        padding: 1rem 3rem;
+    }
+
+    .brand {
+        font-weight: 700;
+        font-size: 1.4rem;
+    }
+
+
+
+}
+
+@media screen and (max-width: 420px) {
+    .time-box {
+
+        min-width: 310px;
+        padding: 10px;
+    }
+    .stopwatch{
+        min-width: 310px;
+        padding: 10px;
+    }
+
+    .time-box h1 {
+        font-size: 3rem;
+    }
+
+    .time-box span {
+        font-size: 1.5rem;
+    }
+    .btn{
+        padding: 9px 18px;
+        margin-inline: 5px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .time-box {
+
+        min-width: 290px;
+        padding: 5px;
+    }
+
+    .stopwatch{
+        min-width: 290px;
+        padding: 5px;
+    }
+    .time-box h1 {
+        font-size: 2.5rem;
+    }
+
+    .time-box span {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 290px) {
+    .btn{
+        padding: 8px 14px;
+        margin-inline: 5px;
+    }
+} 
+
+
+
+ 
+
+
+
+/* ....................Weather App................ */
+
+.weather-container{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: rgb(65, 62, 62, 0.6); */
+    min-height: 100vh;
+    display: none;
+    
+}
+
+
+.inner-container{
+    width: 400px;
+    height: min-content;
+    background-color: rgb(32, 32, 32, 0.7);
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 4rem;
+    
+}
+
+.search-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: min-content;
+    
+}
+
+.search-box input{
+    width: 84%;
+    font-size: 20px;
+    text-transform: capitalize;
+    color: #000;
+    background-color: #dfdfdf;
+    padding: 12px 16px;
+    border-radius: 10px;
+}
+
+.search-box input::placeholder{
+    color: #000;
+}
+
+.search-box button{
+    width: 46px;
+    height: 46px;
+    background-color: #dfdfdf;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 25px;
+    border: none;
+}
+
+.search-box button:hover{
+    color: #fff;
+    background-color: #ababab;
+}
+
+.weather-body{
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-block: 20px;
+    display: none;
+}
+.weather-body .details-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.details-box  img{
+    width: 40%;
+}
+.details-box .location-details {
+    color: rgb(255, 255, 108);
+    text-transform: capitalize;
+}
+
+.weather-box{
+    margin-block: 20px;
+    text-align: center;
+}
+
+.weather-box .temperature{
+    font-size: 40px;
+    font-weight: 800;
+    position: relative;
+    color: white;
+}
+
+.weather-box .temperature sup{
+    font-size: 20px;
+    position: absolute;
+    font-weight: 600;
+    color: white;
+}
+
+.weather-box .description{
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: capitalize;
+    color: white;
+}
+
+.weather-details{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.humidity, .wind{
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.humidity{
+    margin-left: 20px;
+}
+
+.wind{
+    margin-right: 20px;
+}
+
+.weather-details i{
+    font-size: 36px;
+}
+
+.weather-details .text{
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+.text span{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.location-not-found{
+    margin-top: 20px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.location-not-found h1{
+    font-size: 20px;
+    color: #ffffff;
+    margin-block-end: 15px;
+}
+.location-not-found img{
+    width: 80%;
+}
